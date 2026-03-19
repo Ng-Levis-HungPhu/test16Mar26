@@ -22,7 +22,13 @@ def data():
     return jsonify({"message": f"Hello {name}"})
 
 
+# For local host
+# if __name__ == "__main__":
+#     url = "http://127.0.0.1:5000"
+#     webbrowser.open(url)
+#     app.run(debug=True)
+
+# For public host
 if __name__ == "__main__":
-    url = "http://127.0.0.1:5000"
-    webbrowser.open(url)
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)

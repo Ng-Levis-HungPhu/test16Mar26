@@ -7,12 +7,12 @@ CORS(app)
 
 @app.route("/")
 def home():
-    return "<h1>Server đang chạy 🚀</h1>"
+    return "<h1>Server is running</h1>"
 
 # API GET
 @app.route("/api/hello", methods=["GET"])
 def hello():
-    return jsonify({"message": "Hello from Python backend 🐍"})
+    return jsonify({"message": "Hello from Python backend"})
 
 # API POST
 @app.route("/api/data", methods=["POST"])

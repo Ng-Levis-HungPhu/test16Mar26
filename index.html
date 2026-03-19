@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask-Render Frontend</title>
+</head>
+<body>
+    <h1>Frontend trên GitHub Pages</h1>
+    <button onclick="callAPI()">Gửi yêu cầu tới Backend</button>
+    <p id="response"></p>
+
+    <script>
+        async function callAPI() {
+            // THAY URL NÀY BẰNG URL RENDER CỦA BẠN
+            const backendUrl = "https://my-backend.onrender.com/api/hello";
+            
+            try {
+                const res = await fetch(backendUrl);
+                const data = await res.json();
+                document.getElementById("response").innerText = data.message;
+            } catch (err) {
+                console.error("Lỗi kết nối:", err);
+            }
+        }
+    </script>
+</body>
+</html>
